@@ -1,95 +1,50 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import logo from '../../public/START_logo_fullwhite.svg' 
+import logo3d from '../../public/start-3D.svg' 
+import arrowRuond from '../../public/Vector-arrow-round.svg' 
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+   <section id='section-1' className='header-section'>
+    <div className='bg-elements'>
+      <h1 className='bg-elements-text'>START</h1>
+      <div className='bg-elements-grad'></div>
+      </div> 
+    <div className='container'>
+      <nav>
+        <div><Image className='logo' src={logo} alt="logo" /></div>
+        <div className='nav-links'> 
+          <a href="">Rewards</a>
+          <a href="">Contact us</a>
+          <a href="">FAQs</a>
         </div>
+        <button>
+          Sign in
+        </button>
+      </nav>
+      <div className='main'>
+      <div className='main-content'>
+        <h3 className='q-heading'>Buying a property?</h3>
+        <p className='q-answer'>The only thing left to sweeten the deal is our</p>
+        <h2 className='year-end'>Year End</h2>
+        <Image className='logo-3d' src={logo3d} alt="logo3D" />
+        <div className='flex-container'>
+          <div className='h-line'></div>
+          <p className='offer-text'>Festive offers are back</p>
+        </div>
+        <p className='promo-text'>Enjoy special promos and download cashback vouchers that will help you EARN more savings from participating projects and household brands.</p>
+          <button>
+          <Image className='button-ico' src={arrowRuond} alt="arrowRound"/>
+          <p>Explore rewards</p>
+          </button>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='main-img-right'></div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className='mouse-scroll'>
+        <p className='mouse-scroll-text'></p>
+        <div className='mouse-scroll-icon'></div>
       </div>
-    </main>
+    </div>
+   </section>
   )
 }
