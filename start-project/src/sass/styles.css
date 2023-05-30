@@ -150,7 +150,8 @@ body {
   background-color: #eeac55;
   border: none;
   border-radius: 100px;
-  transition: all 0.1s;
+  transition: all 0.2s;
+  cursor: pointer;
 }
 #section-1 .main-content button .button-ico {
   margin-right: 20px;
@@ -192,6 +193,17 @@ body {
   color: #ffffff;
   line-height: 150%;
   margin-bottom: 10px;
+}
+#section-1 .mouse-scroll-icon {
+  animation: float 0.7s ease-in-out infinite alternate;
+}
+@keyframes float {
+  from {
+    transform: translatey(0%);
+  }
+  to {
+    transform: translatey(10%);
+  }
 }
 #section-1 .vector16 {
   position: absolute;
