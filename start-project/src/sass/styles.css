@@ -15,6 +15,7 @@ body {
   background-image: url("../../public/Webby.svg");
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 #section-1 .bg-elements {
   position: absolute;
@@ -72,13 +73,20 @@ body {
   border: 1px solid rgba(115, 61, 203, 0.3);
   padding: 10px 28px;
   border-radius: 100px;
+  text-align: center;
   color: #733dcb;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 2px;
+  border-style: inset;
+  border: 1px solid #b89ce4;
   cursor: pointer;
+  transition: all 0.1s;
+}
+#section-1 .container nav button:hover {
+  background: #ebdcff;
 }
 #section-1 .main {
   display: flex;
@@ -135,12 +143,14 @@ body {
 #section-1 .main-content button {
   margin-top: 9.5%;
   margin-left: 1.8%;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   padding: 20px 49px;
   background-color: #eeac55;
   border: none;
   border-radius: 100px;
+  transition: all 0.1s;
 }
 #section-1 .main-content button .button-ico {
   margin-right: 20px;
@@ -153,13 +163,17 @@ body {
   color: #212121;
   white-space: nowrap;
 }
+#section-1 .main-content button:hover {
+  transform: translate(-3%, -3%);
+  box-shadow: 12px 13px rgba(0, 0, 0, 0.25);
+}
 #section-1 .main-img-right {
   width: 500px;
   position: relative;
 }
 #section-1 .main-img-right .img-right {
   position: absolute;
-  top: -5%;
+  top: -4.3%;
   right: -46%;
   z-index: -1;
 }
@@ -170,7 +184,7 @@ body {
   align-items: center;
   left: 50%;
   transform: translateX(-57%);
-  bottom: -7%;
+  bottom: 5%;
 }
 #section-1 .mouse-scroll-text {
   font-weight: 500;
@@ -178,4 +192,10 @@ body {
   color: #ffffff;
   line-height: 150%;
   margin-bottom: 10px;
+}
+#section-1 .vector16 {
+  position: absolute;
+  bottom: -56.6%;
+  right: -34.5%;
+  z-index: -1;
 }/*# sourceMappingURL=styles.css.map */

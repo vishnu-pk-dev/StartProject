@@ -4,6 +4,7 @@ import Image from 'next/image'
 // import arrowRuond from '../../../public/Vector-arrow-round.svg' 
 // import women1 from '../../../public/joyful-afro-woman.png'
 // import mouseScroll from '../../../public/Mouse-icon.svg' 
+import vector16 from '../../../public/Vector-16.svg' 
 import Section1Nav from './Section1Nav'
 import Section1Main from './Section1Main'
 import Section1Scroll from './Section1Scroll'
@@ -50,6 +51,8 @@ export default function Section1Container() {
         </div>
       </div> */}
       <Section1Scroll/>
+      
+      <div><Image className='vector16' src={vector16} alt="vector16" /></div>
     </div>
     );
 }

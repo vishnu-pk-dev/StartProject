@@ -14,12 +14,10 @@ body {
 }
 
 #section-1 {
-  //   background-color: $primary;
   background-image: url("../../public/Webby.svg");
-  // height: 100vh;
   width: 100%;
   position: relative;
-
+  overflow: hidden;
   .bg-elements {
     position: absolute;
     width: 100%;
@@ -73,7 +71,6 @@ body {
       justify-content: space-between;
       align-items: center;
       //   .logo {
-
       //   }
       .nav-links {
         display: flex;
@@ -89,13 +86,20 @@ body {
         border: 1px solid rgba(115, 61, 203, 0.3);
         padding: 10px 28px;
         border-radius: 100px;
+        text-align: center;
         color: #733dcb;
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
         line-height: 21px;
         margin-bottom: 2px;
+        border-style: inset;
+        border: 1px solid #b89ce4;
         cursor: pointer;
+        transition: all 0.1s;
+        &:hover {
+          background: #ebdcff;
+        }
       }
     }
   }
@@ -152,6 +156,7 @@ body {
       button {
         margin-top: 9.5%;
         margin-left: 1.8%;
+        margin-bottom: 100px;
         display: flex;
         // align-items: center;
         justify-content: center;
@@ -159,6 +164,7 @@ body {
         background-color: #eeac55;
         border: none;
         border-radius: 100px;
+        transition: all 0.1s;
         .button-ico {
           margin-right: 20px;
         }
@@ -167,10 +173,13 @@ body {
           font-weight: 600;
           font-size: 20.7px;
           line-height: 150%;
-          // letter-spacing: 0.02em;
 
           color: #212121;
           white-space: nowrap;
+        }
+        &:hover {
+          transform: translate(-3%, -3%);
+          box-shadow: 12px 13px rgba(0, 0, 0, 0.25);
         }
       }
     }
@@ -179,7 +188,7 @@ body {
       position: relative;
       .img-right {
         position: absolute;
-        top: -5%;
+        top: -4.3%;
         right: -46%;
         z-index: -1;
       }
@@ -192,7 +201,7 @@ body {
     align-items: center;
     left: 50%;
     transform: translateX(-57%);
-    bottom: -7%;
+    bottom: 5%;
     &-text {
       font-weight: 500;
       font-size: 14px;
@@ -200,5 +209,11 @@ body {
       line-height: 150%;
       margin-bottom: 10px;
     }
+  }
+  .vector16 {
+    position: absolute;
+    bottom: -56.6%;
+    right: -34.5%;
+    z-index: -1;
   }
 }
