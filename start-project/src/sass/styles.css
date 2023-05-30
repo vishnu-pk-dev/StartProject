@@ -15,7 +15,6 @@ body {
   background-image: url("../../public/Webby.svg");
   width: 100%;
   position: relative;
-  overflow: hidden;
 }
 #section-1 .bg-elements {
   position: absolute;
@@ -59,6 +58,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+#section-1 .container nav .logo {
+  cursor: pointer;
+}
 #section-1 .container nav .nav-links {
   display: flex;
   flex-wrap: none;
@@ -83,56 +85,56 @@ body {
   border-style: inset;
   border: 1px solid #b89ce4;
   cursor: pointer;
-  transition: all 0.1s;
+  transition: all 0.05s;
 }
 #section-1 .container nav button:hover {
   background: #ebdcff;
 }
-#section-1 .main {
+#section-1 .container .main {
   display: flex;
   margin-top: 12.3%;
 }
-#section-1 .main-content {
+#section-1 .container .main-content {
   width: 575px;
   color: #fff;
 }
-#section-1 .main-content .q-heading {
+#section-1 .container .main-content .q-heading {
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
   margin-bottom: 1%;
 }
-#section-1 .main-content .q-answer {
+#section-1 .container .main-content .q-answer {
   font-size: 18.15px;
   margin-bottom: 7%;
 }
-#section-1 .main-content .year-end {
+#section-1 .container .main-content .year-end {
   font-style: italic;
   font-weight: 600;
   font-size: 35px;
   line-height: 150%;
   margin-bottom: 1.2%;
 }
-#section-1 .main-content .flex-container {
+#section-1 .container .main-content .flex-container {
   display: flex;
   margin-left: 1%;
   margin-top: 2.9%;
   align-items: center;
 }
-#section-1 .main-content .flex-container .h-line {
+#section-1 .container .main-content .flex-container .h-line {
   height: 2px;
   width: 138px;
   background-color: #fff;
 }
-#section-1 .main-content .flex-container .offer-text {
+#section-1 .container .main-content .flex-container .offer-text {
   font-style: italic;
   font-weight: 400;
   font-size: 26.2102px;
   line-height: 39px;
   margin-left: 2.5%;
 }
-#section-1 .main-content .promo-text {
+#section-1 .container .main-content .promo-text {
   margin-top: 6%;
   margin-right: 5%;
   font-style: normal;
@@ -140,7 +142,7 @@ body {
   font-size: 14px;
   line-height: 171%;
 }
-#section-1 .main-content button {
+#section-1 .container .main-content button {
   margin-top: 9.5%;
   margin-left: 1.8%;
   margin-bottom: 100px;
@@ -150,13 +152,13 @@ body {
   background-color: #eeac55;
   border: none;
   border-radius: 100px;
-  transition: all 0.2s;
+  transition: all 0.5s;
   cursor: pointer;
 }
-#section-1 .main-content button .button-ico {
+#section-1 .container .main-content button .button-ico {
   margin-right: 20px;
 }
-#section-1 .main-content button p {
+#section-1 .container .main-content button p {
   font-style: normal;
   font-weight: 600;
   font-size: 20.7px;
@@ -164,21 +166,21 @@ body {
   color: #212121;
   white-space: nowrap;
 }
-#section-1 .main-content button:hover {
+#section-1 .container .main-content button:hover {
   transform: translate(-3%, -3%);
   box-shadow: 12px 13px rgba(0, 0, 0, 0.25);
 }
-#section-1 .main-img-right {
+#section-1 .container .main-img-right {
   width: 500px;
   position: relative;
 }
-#section-1 .main-img-right .img-right {
+#section-1 .container .main-img-right .img-right {
   position: absolute;
   top: -4.3%;
   right: -46%;
   z-index: -1;
 }
-#section-1 .mouse-scroll {
+#section-1 .container .mouse-scroll {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -187,15 +189,15 @@ body {
   transform: translateX(-57%);
   bottom: 5%;
 }
-#section-1 .mouse-scroll-text {
+#section-1 .container .mouse-scroll-text {
   font-weight: 500;
   font-size: 14px;
   color: #ffffff;
   line-height: 150%;
   margin-bottom: 10px;
 }
-#section-1 .mouse-scroll-icon {
-  animation: float 0.7s ease-in-out infinite alternate;
+#section-1 .container .mouse-scroll-icon {
+  animation: float 0.9s ease-in-out infinite alternate;
 }
 @keyframes float {
   from {
@@ -205,9 +207,22 @@ body {
     transform: translatey(10%);
   }
 }
-#section-1 .vector16 {
+#section-1 .container .vector16 {
   position: absolute;
   bottom: -56.6%;
   right: -34.5%;
   z-index: -1;
+}
+
+#section-2 {
+  height: 900px;
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  z-index: 1;
+  color: #ffffff;
+  background-color: #1f1f22;
+}
+#section-2 .rewards-container {
+  margin-top: 100px;
 }/*# sourceMappingURL=styles.css.map */

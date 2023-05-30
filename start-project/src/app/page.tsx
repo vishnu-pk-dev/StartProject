@@ -5,9 +5,14 @@
 // import women1 from '../../public/joyful-afro-woman.png'
 // import mouseScroll from '../../public/Mouse-icon.svg' 
 import Section1 from './components/Section1'
+import Section2 from './components/Section2'
 
 export default function Home() {
   return (
+  <div>
+  <Section1/>
+  <Section2/>
+  </div>
   //  <section id='section-1' className='header-section'>
   //   <div className='bg-elements'>
   //     <h1 className='bg-elements-text'>START</h1>
@@ -53,6 +58,5 @@ export default function Home() {
   //     </div>
   //   </div>
   //  </section>
-  <Section1/>
   )
 }

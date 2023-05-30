@@ -51,7 +51,7 @@ export default function Section1Container() {
         </div>
       </div> */}
       <Section1Scroll/>
-      
+
       <div><Image className='vector16' src={vector16} alt="vector16" /></div>
     </div>
     );
