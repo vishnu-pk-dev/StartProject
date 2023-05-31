@@ -1,3 +1,5 @@
+"use client";
+
 // import Image from 'next/image'
 // import logo from '../../public/START_logo_fullwhite.svg'
 // import logo3d from '../../public/start-3D.svg'
@@ -9,7 +11,12 @@ import Section2 from "./components/Section2";
 
 export default function Home() {
   return (
-    <div className="home">
+    <div
+      className="home"
+      onScroll={() => {
+        console.log("scrollinggg");
+      }}
+    >
       <Section1 />
       <Section2 />
     </div>

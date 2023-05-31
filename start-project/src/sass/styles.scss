@@ -11,10 +11,16 @@ body {
   background-color: $primary;
   font-family: "Poppins", sans-serif !important;
   width: 100vw;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .felx {
   display: flex;
+}
+.overflow-contain {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 .home {
   height: 100vh;
@@ -26,7 +32,7 @@ body {
   background-image: url("../../public/Webby.svg");
   width: 100%;
   position: relative;
-  margin-top: 3%;
+  margin-top: 1.1%; // due to parallax
   transform-style: preserve-3d;
   // overflow: hidden;
   transform: translateZ(-10px) scale(2);
@@ -34,6 +40,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    transform: translateZ(5px) scale(0.75);
 
     &-text {
       position: absolute;
@@ -76,7 +83,7 @@ body {
     max-width: $set-width;
     height: 100%;
     z-index: 1;
-
+    transform: translateZ(7px) scale(0.65);
     nav {
       padding-top: 15px;
       display: flex;
@@ -252,8 +259,15 @@ body {
   z-index: 1;
   color: #ffffff;
   background-color: #1f1f22;
-  overflow: hidden;
+  // overflow: hidden;
 
+  .vector162 {
+    position: absolute;
+    top: -255px;
+    right: -18.5%;
+    scale: $set-scale;
+    z-index: -1;
+  }
   //================================================
   // .vector-con {
   //   position: absolute;
@@ -316,7 +330,7 @@ body {
       z-index: 10;
       position: absolute;
       transform: rotate(2deg);
-      top: 100.8%;
+      top: 111.5%;
       left: -0.4%;
 
       .slider {
