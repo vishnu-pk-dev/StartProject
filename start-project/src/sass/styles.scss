@@ -22,6 +22,9 @@ body {
   width: 100%;
   height: 100%;
 }
+scale2 {
+  scale: 1.5;
+}
 .home {
   height: 100vh;
   overflow-x: hidden;
@@ -267,6 +270,7 @@ body {
     right: -18.5%;
     scale: $set-scale;
     z-index: -1;
+    // transition: scale 0.3s;
   }
   //================================================
   // .vector-con {

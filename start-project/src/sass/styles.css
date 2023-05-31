@@ -21,6 +21,10 @@ body {
   height: 100%;
 }
 
+scale2 {
+  scale: 1.5;
+}
+
 .home {
   height: 100vh;
   overflow-x: hidden;
