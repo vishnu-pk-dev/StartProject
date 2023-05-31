@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+.felx {
+  display: flex;
+}
+
 #section-1 {
   background-image: url("../../public/Webby.svg");
   width: 100%;
@@ -222,7 +226,128 @@ body {
   z-index: 1;
   color: #ffffff;
   background-color: #1f1f22;
+  overflow: hidden;
 }
 #section-2 .rewards-container {
-  margin-top: 100px;
+  position: relative;
+  padding-top: 160px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#section-2 .rewards-container .btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 12px 13px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+#section-2 .rewards-container h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 72px;
+  margin-top: 27.5px;
+  margin-right: 13px;
+}
+#section-2 .rewards-container h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 66px;
+  color: #eeac55;
+}
+#section-2 .rewards-container h2 {
+  font-weight: 700;
+  font-size: 218px;
+  line-height: 196px;
+  margin-top: 27px;
+  color: rgba(255, 255, 255, 0.1);
+}
+#section-2 .rewards-container .sliding-cards {
+  z-index: 10;
+  position: absolute;
+  transform: rotate(2deg);
+  top: 100.8%;
+  left: -0.4%;
+}
+#section-2 .rewards-container .sliding-cards .slider {
+  margin-bottom: 43px;
+  display: flex;
+}
+#section-2 .rewards-container .sliding-cards .slider .card {
+  border-radius: 15px;
+  width: 308px;
+  height: 200px;
+  text-align: left;
+  margin-right: 37px;
+}
+#section-2 .rewards-container .sliding-cards .slider .white-card {
+  background-color: #ffffff;
+  padding: 29px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#section-2 .rewards-container .sliding-cards .slider .white-card .card-ico {
+  cursor: auto;
+}
+#section-2 .rewards-container .sliding-cards .slider .white-card .card-text {
+  display: flex;
+  flex-direction: column;
+}
+#section-2 .rewards-container .sliding-cards .slider .white-card h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  color: #323033;
+  margin-top: 18px;
+}
+#section-2 .rewards-container .sliding-cards .slider .white-card p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #928f8f;
+  margin-top: 5px;
+}
+#section-2 .rewards-container .sliding-cards .slider .bg-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 15px 16px;
+}
+#section-2 .rewards-container .sliding-cards .slider .bg-card h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+}
+#section-2 .rewards-container .sliding-cards .slider .bg-card h2 span {
+  font-weight: 600;
+}
+#section-2 .rewards-container .sliding-cards .slider .bg-card p {
+  margin-top: 2%;
+}
+#section-2 .rewards-container .sliding-cards-top {
+  animation: scrolldiv 25s linear infinite alternate;
+}
+#section-2 .rewards-container .sliding-cards-bottom {
+  animation: scrolldiv 25s linear infinite alternate-reverse;
+}
+#section-2 .rewards-container .sliding-cards-bottom .card {
+  transform: translateX(-75%);
+}
+@keyframes scrolldiv {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=styles.css.map */
