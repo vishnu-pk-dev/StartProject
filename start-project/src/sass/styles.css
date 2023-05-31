@@ -8,17 +8,27 @@ body {
   background-color: #5a1cb1;
   font-family: "Poppins", sans-serif !important;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .felx {
   display: flex;
 }
 
+.home {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 10px;
+}
+
 #section-1 {
   background-image: url("../../public/Webby.svg");
   width: 100%;
   position: relative;
+  margin-top: 3%;
+  transform-style: preserve-3d;
+  transform: translateZ(-10px) scale(2);
 }
 #section-1 .bg-elements {
   position: absolute;
@@ -211,12 +221,6 @@ body {
     transform: translatey(10%);
   }
 }
-#section-1 .container .vector16 {
-  position: absolute;
-  bottom: -56.6%;
-  right: -34.5%;
-  z-index: -1;
-}
 
 #section-2 {
   height: 900px;
@@ -335,10 +339,10 @@ body {
   margin-top: 2%;
 }
 #section-2 .rewards-container .sliding-cards-top {
-  animation: scrolldiv 25s linear infinite alternate;
+  animation: scrolldiv 25s linear infinite forwards;
 }
 #section-2 .rewards-container .sliding-cards-bottom {
-  animation: scrolldiv 25s linear infinite alternate-reverse;
+  animation: scrolldiv 25s linear infinite reverse;
 }
 #section-2 .rewards-container .sliding-cards-bottom .card {
   transform: translateX(-75%);

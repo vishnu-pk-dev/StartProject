@@ -11,16 +11,25 @@ body {
   background-color: $primary;
   font-family: "Poppins", sans-serif !important;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .felx {
   display: flex;
+}
+.home {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 10px;
 }
 #section-1 {
   background-image: url("../../public/Webby.svg");
   width: 100%;
   position: relative;
+  margin-top: 3%;
+  transform-style: preserve-3d;
   // overflow: hidden;
+  transform: translateZ(-10px) scale(2);
   .bg-elements {
     position: absolute;
     width: 100%;
@@ -225,13 +234,14 @@ body {
         }
       }
     }
-    .vector16 {
-      // display: none;
-      position: absolute;
-      bottom: -56.6%;
-      right: -34.5%;
-      z-index: -1;
-    }
+    // .vector16 {
+    //   // display: none;
+    //   position: absolute;
+    //   bottom: -56.6%;
+    //   right: -34.5%;
+    //   z-index: -1;
+    //   transform: translateZ(10px);
+    // }
   }
 }
 #section-2 {
@@ -373,10 +383,10 @@ body {
         }
       }
       &-top {
-        animation: scrolldiv 25s linear infinite alternate;
+        animation: scrolldiv 25s linear infinite forwards;
       }
       &-bottom {
-        animation: scrolldiv 25s linear infinite alternate-reverse;
+        animation: scrolldiv 25s linear infinite reverse;
         .card {
           transform: translateX(-75%);
         }

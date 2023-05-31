@@ -108,9 +108,71 @@ export default function SlidingCards() {
               </div>
             ))
           : null}
+
+        {Objects.cardOptions && Objects.cardOptions.length > 0
+          ? Objects.cardOptions.map((post) => (
+              <div className="felx" key={post.Id}>
+                <div className="white-card card">
+                  <Image
+                    className="card-ico"
+                    src={post.svgUrl}
+                    alt="card-ico"
+                  />
+                  <div className="card-text">
+                    <h2>{post.wHeaderTitle}</h2>
+                    <p>{post.wFooterText}</p>
+                  </div>
+                </div>
+                {post?.bgHeaderTitle && (
+                  <div
+                    className="bg-card card"
+                    style={{
+                      backgroundImage: `url(${post.bgImage})`,
+                    }}
+                  >
+                    <div className="card-text">
+                      <h2>
+                        From <span>{post.bgHeaderTitle}</span>
+                      </h2>
+                      <p>{post.bgFooterText}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))
+          : null}
       </div>
 
       <div className="sliding-cards-bottom slider">
+        {Objects.cardOptions && Objects.cardOptions.length > 0
+          ? Objects.cardOptions.map((post) => (
+              <div className="felx" key={post.Id}>
+                <div className="white-card card">
+                  <Image
+                    className="card-ico"
+                    src={post.svgUrl}
+                    alt="card-ico"
+                  />
+                  <h2>{post.wHeaderTitle}</h2>
+                  <p>{post.wFooterText}</p>
+                </div>
+                {post?.bgHeaderTitle && (
+                  <div
+                    className="bg-card card"
+                    style={{
+                      backgroundImage: `url(${post.bgImage})`,
+                    }}
+                  >
+                    <h2>
+                      From <span>{post.bgHeaderTitle}</span>
+                    </h2>
+                    <p>{post.bgFooterText}</p>
+                  </div>
+                )}
+              </div>
+            ))
+          : null}
+
         {Objects.cardOptions && Objects.cardOptions.length > 0
           ? Objects.cardOptions.map((post) => (
               <div className="felx" key={post.Id}>
