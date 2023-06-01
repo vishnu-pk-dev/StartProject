@@ -14,6 +14,15 @@ body {
   display: flex;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .overflow-contain {
   position: absolute;
   overflow: hidden;
@@ -21,8 +30,12 @@ body {
   height: 100%;
 }
 
-scale2 {
-  scale: 1.5;
+.opacity0 {
+  opacity: 0 !important;
+}
+
+.opacity1 {
+  opacity: 1 !important;
 }
 
 .home {
@@ -235,7 +248,7 @@ scale2 {
 }
 
 #section-2 {
-  height: 900px;
+  height: 1400px;
   position: relative;
   margin-top: 100px;
   text-align: center;
@@ -249,6 +262,8 @@ scale2 {
   right: -18.5%;
   scale: 1;
   z-index: -1;
+  pointer-events: none;
+  transition: scale 0.2s;
 }
 #section-2 .rewards-container {
   position: relative;
@@ -372,4 +387,88 @@ scale2 {
   to {
     transform: translateX(-50%);
   }
+}
+#section-2 .how-it-works {
+  margin: auto;
+  margin-bottom: 0;
+  width: 92%;
+  background-color: #fff;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 90px;
+  padding: 57px 0px;
+  color: #2e2525;
+  border-radius: 40px 40px 0px 0px;
+}
+
+#section-3 {
+  min-height: 600vh;
+  background-color: #fff;
+  align-items: center;
+}
+#section-3 .step-slides {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+#section-3 .step-slides .container {
+  height: inherit;
+  margin: auto;
+  max-width: 81.25%;
+  display: flex;
+  align-items: center;
+}
+#section-3 .step-slides .container .steps-left {
+  z-index: 1;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  height: 466px;
+  width: 50%;
+}
+#section-3 .step-slides .container .steps-left .bg-step-count {
+  position: absolute;
+}
+#section-3 .step-slides .container .steps-left .step-text {
+  cursor: auto;
+}
+#section-3 .step-slides .container .steps-left button {
+  margin-top: 19.5%;
+  background: #ffffff;
+  border: 1px solid #323033;
+  border-radius: 100px;
+  padding: 5px 25px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #323033;
+}
+#section-3 .step-slides .container .steps-left h3 {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 90px;
+}
+#section-3 .step-slides .container .steps-left p {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #2e2525;
+}
+#section-3 .step-slides .container .steps-right {
+  width: 50%;
+  position: relative;
+  height: inherit;
+}
+#section-3 .step-slides .container .steps-right .bg-step-img {
+  position: absolute;
+  top: -35%;
+  left: -55%;
 }/*# sourceMappingURL=styles.css.map */
