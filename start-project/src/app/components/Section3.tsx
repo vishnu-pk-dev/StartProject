@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import step01 from "../../../public/step01.svg";
 import step02 from "../../../public/step02.svg";
@@ -60,12 +61,9 @@ export const Objects = {
   ],
 };
 
-
-
 export default function Section3() {
   return (
-    <section
-      id="section-3">
+    <section id="section-3">
       {Objects.cardOptions && Objects.cardOptions.length > 0
         ? Objects.cardOptions.map((post) => (
             <div key={post.Id} className={`step-slides ${post.className} `}>

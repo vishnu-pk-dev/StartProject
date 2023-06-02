@@ -1,13 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #5a1cb1;
   font-family: "Poppins", sans-serif !important;
   width: 100vw;
+}
+
+button {
+  font-family: "Poppins", sans-serif !important;
 }
 
 .felx {
@@ -38,6 +47,16 @@ body {
   opacity: 1 !important;
 }
 
+@keyframes animatesteps {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 .home {
   height: 100vh;
   overflow-x: hidden;
@@ -87,7 +106,7 @@ body {
   position: relative;
   margin: auto;
   max-width: 81.25%;
-  height: 100%;
+  height: inherit;
   z-index: 1;
   transform: translateZ(7px) scale(0.65);
 }
@@ -198,9 +217,8 @@ body {
   margin-right: 20px;
 }
 #section-1 .container .main-content button p {
-  font-style: normal;
   font-weight: 600;
-  font-size: 20.7px;
+  font-size: 20px;
   line-height: 150%;
   color: #212121;
   white-space: nowrap;
@@ -413,6 +431,8 @@ body {
   top: 0;
   overflow: hidden;
   opacity: 0;
+  background-color: #fff;
+  transition: all 0.2s;
 }
 #section-3 .step-slides .container {
   height: inherit;
@@ -471,4 +491,157 @@ body {
   position: absolute;
   top: -35%;
   left: -55%;
+}
+
+#FAQ {
+  background: #260058;
+}
+#FAQ #FAQ-in {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  border-radius: 0 0 30px 30px;
+}
+#FAQ #FAQ-in .container {
+  width: 81.25%;
+  margin: auto;
+  padding-top: 44px;
+  display: flex;
+  flex-direction: column;
+}
+#FAQ #FAQ-in .container .faq-heading {
+  margin-inline: 20%;
+  text-align: center;
+}
+#FAQ #FAQ-in .container .faq-heading h2 {
+  font-size: 54px;
+  font-weight: 600;
+}
+#FAQ #FAQ-in .container .faq-heading h2 span {
+  color: #eeac55;
+}
+#FAQ #FAQ-in .container .faq-heading p {
+  margin-top: 24px;
+  font-size: 18px;
+  color: #2e3133;
+}
+#FAQ #FAQ-in .container .faq-heading p a {
+  color: #000;
+}
+#FAQ #FAQ-in .container .faq-accordion {
+  margin-inline: 17%;
+  margin-block: 44px;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion:hover {
+  cursor: pointer;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #29333d;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn P {
+  margin-right: 20%;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn::after {
+  content: "+";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid #000;
+  min-width: 1em;
+  border-radius: 5px;
+  height: 1em;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn:hover > .accordion-btn::after {
+  background-color: #000;
+  color: #fff;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .panel {
+  max-height: 0;
+  color: #3b4d5d;
+  font-size: 16px;
+  font-weight: 400px;
+  margin-right: 20%;
+  transition: max-height 0.2s;
+  overflow: hidden;
+}
+#FAQ #FAQ-in .container button {
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px 62.5px;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+#FAQ #FAQ-in .container button:hover {
+  transform: translate(-3%, -3%);
+  box-shadow: 12px 13px rgb(0, 0, 0);
+}
+#FAQ #FAQ-in .container button p {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #323033;
+}
+#FAQ #FAQ-in .container .download-info {
+  display: flex;
+  background: #f0f1f3;
+  margin-top: 78.5px;
+  margin-bottom: 101.51px;
+  padding-inline: 75.1px;
+  border-radius: 40px;
+}
+#FAQ #FAQ-in .container .download-info-left {
+  width: 50%;
+  padding-block: 60px;
+  z-index: 1;
+}
+#FAQ #FAQ-in .container .download-info-left .app-heading {
+  display: flex;
+  font-size: 34.51px;
+  font-weight: 600;
+  line-height: 49.5px;
+  color: #140c40;
+  flex-wrap: wrap;
+}
+#FAQ #FAQ-in .container .download-info-left .app-heading .blue-line {
+  width: inherit;
+  height: 3px;
+  background: #488bf8;
+  border-radius: 4px;
+}
+#FAQ #FAQ-in .container .download-info-left p {
+  font-size: 15px;
+  margin-right: 20%;
+  line-height: 24px;
+  font-weight: 400;
+  margin-block: 30px;
+  color: #3b4d5d;
+}
+#FAQ #FAQ-in .container .download-info-left .app-img {
+  margin-right: 10px;
+}
+#FAQ #FAQ-in .container .download-info-right {
+  display: flex;
+  width: 50%;
+  justify-content: right;
+  align-items: center;
+}
+#FAQ #footer {
+  width: 100%;
+  min-height: 200px;
 }/*# sourceMappingURL=styles.css.map */

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
 import Section3 from "./components/Section3";
+import SectionFAQ from "./components/SectionFAQ";
 let i = 1;
 let scrllY: any = 0;
 let setLast: any = 0;
@@ -26,6 +27,7 @@ export default function Home() {
 
   function myFun() {
     const element = document.querySelector("#section-1");
+
     let rect: any = element?.getBoundingClientRect();
     if (rect?.y < scrllY && i <= 1.3) {
       i += 0.01;
@@ -40,8 +42,9 @@ export default function Home() {
       i = 1;
     }
     scrllY = rect?.y;
+
     const elements = document.querySelectorAll(".step-slides");
-    let sticky;
+
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].getBoundingClientRect().top <= 0) {
         elements[i]?.classList.add("opacity1");
@@ -50,36 +53,16 @@ export default function Home() {
         elements[i]?.classList.remove("opacity1");
       }
     }
-
-    // const element1 = document.querySelector(".step-slide-1");
-    // const element2 = document.querySelector(".step-slide-2");
-    // const element3 = document.querySelector(".step-slide-3");
-    // const element4 = document.querySelector(".step-slide-4");
-    // const element5 = document.querySelector(".step-slide-5");
-    // let rect1: any = element1?.getBoundingClientRect();
-    // let rect2: any = element2?.getBoundingClientRect();
-    // let rect3: any = element3?.getBoundingClientRect();
-    // let rect4: any = element4?.getBoundingClientRect();
-    // let rect5: any = element5?.getBoundingClientRect();
-    // if (rect1.top == 0) {
-    //   element1?.classList.add("opacity1");
-    // }if (rect2.top == 0) {
-    //   element2?.classList.add("opacity1");
-    //   element1?.classList.remove("opacity1");
-
-    // }if (rect3.top == 0) {
-    //   element3?.classList.add("opacity1");
-    //   element2?.classList.remove("opacity1");
-
-    // }if (rect4.top == 0) {
-    //   element4?.classList.add("opacity1");
-    //   element1?.classList.remove("opacity1");
-
-    // }if (rect4.top == 0) {
-    //   element1?.classList.add("opacity1");
-    // }
-    // console.log(rect1.top);
+    if (
+      elements[0]?.getBoundingClientRect().top <= 0 &&
+      elements[1]?.getBoundingClientRect().top <= 0
+    ) {
+      elements[0]?.classList.remove("opacity1");
+    } else {
+      elements[0]?.classList.add("opacity1");
+    }
   }
+
   return (
     <div
       className="home"
@@ -90,6 +73,7 @@ export default function Home() {
       <Section1 />
       <Section2 scale={scale} />
       <Section3 />
+      <SectionFAQ />
     </div>
   );
 }
