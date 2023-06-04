@@ -25,7 +25,7 @@ export default function Home() {
     setFirstPos(rect.y);
   }, []);
 
-  function myFun() {
+  function scrollEffect() {
     const element = document.querySelector("#section-1");
 
     let rect: any = element?.getBoundingClientRect();
@@ -67,7 +67,7 @@ export default function Home() {
     <div
       className="home"
       onScroll={() => {
-        myFun();
+        scrollEffect();
       }}
     >
       <Section1 />

@@ -98,7 +98,7 @@ export default function SectionFAQ() {
           </div>
         </div>
       </section>
-      {/* <section id="footer"></section> */}
+      <section id="footer"></section>
     </section>
   );
 }
