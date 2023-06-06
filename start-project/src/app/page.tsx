@@ -15,6 +15,7 @@ import SectionFAQ from "./components/SectionFAQ";
 //========var==========
 let i = 1;
 let j = 1;
+let k = 0;
 let scrllY: any = 0;
 let scrll2Y: any = 0;
 let setLast: any = 0;
@@ -31,7 +32,7 @@ export default function Home() {
     // console.log(rect.y, "y");
   }, []);
   //=========================================================
-  window.addEventListener("scroll", scrollEffect);
+  // window.addEventListener("scroll", scrollEffect);
   //======================scroll trigger functuion=============================
   function scrollEffect() {
     //======================scroll trigger rect=============================
@@ -58,25 +59,49 @@ export default function Home() {
 
     const howTo: any = document.querySelector(".how-it-works");
     const winSize: any = window.innerHeight;
+    //=======================scale how it==================================
+
     if (
-      howTo?.getBoundingClientRect().bottom <= winSize &&
+      howTo?.getBoundingClientRect().top <= winSize &&
       scrll2Y > howTo?.getBoundingClientRect().top
     ) {
       // console.log("same");
 
       {
         if (j <= 2) {
-          j += 0.01;
+          j += 0.005;
           setLeng(j);
         }
       }
     }
     if (scrll2Y < howTo?.getBoundingClientRect().top) {
       if (j > 1) {
-        j -= 0.01;
+        j -= 0.005;
         setLeng(j);
       }
     }
+
+    //========================== goto section 3=================================
+
+    // if (
+    //   howTo?.getBoundingClientRect().bottom <= winSize &&
+    //   howTo?.getBoundingClientRect().bottom >= 0 &&
+    //   k == 0
+    // ) {
+    //   // const section3 = document.getElementById("section-3");
+    //   // section3?.scrollIntoView({ behavior: "smooth" });
+    //   // location.hash = "section-3";
+    //   setTimeout(() => {
+    //     const section3 = document.getElementById("section-3");
+    //     section3?.scrollIntoView({ behavior: "smooth" });
+    //   }, 50);
+
+    //   k = 1;
+    // }
+    // if (howTo?.getBoundingClientRect().bottom >= winSize) {
+    //   k = 0;
+    // }
+    //===============================================================
     scrll2Y = howTo?.getBoundingClientRect().top;
     //======================scroll trigger step-slides=============================
     const elements = document.querySelectorAll(".step-slides");

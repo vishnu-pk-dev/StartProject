@@ -20,7 +20,7 @@ export default function SlidingCards() {
         scrollTrigger: {
           trigger: element.querySelector(".sliding-cards"),
           start: "15% bottom",
-          end: "33% top",
+          end: "50% top",
           scrub: true,
           // markers: true,
         },
@@ -39,9 +39,9 @@ export default function SlidingCards() {
       {
         x: -500,
         scrollTrigger: {
-          trigger: element.querySelector(".slidiw2wwng-cards"),
+          trigger: element.querySelector(".sliding-cards"),
           start: "15% bottom",
-          end: "33% top",
+          end: "50% top",
           scrub: true,
           // markers: true,
         },

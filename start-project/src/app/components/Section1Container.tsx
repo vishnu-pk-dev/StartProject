@@ -5,7 +5,7 @@ import Section1Main from "./Section1Main";
 import Section1Scroll from "./Section1Scroll";
 export default function Section1Container() {
   return (
-    <div className="container">
+    <div className="container" id="sect-1-cont">
       <Section1Nav />
 
       <Section1Main />
