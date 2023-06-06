@@ -1,8 +1,16 @@
 "use client";
 import Image from "next/image";
 import vector16 from "../../../public/Vector-16.svg";
-import SlidingCards from "./SlidingCards";
-export default function Section2({ scale }: { scale: number }) {
+import SlidingCards from "./SlidingCards2";
+export default function Section2({
+  scale,
+  leng,
+}: {
+  scale: number;
+  leng: number;
+}) {
+  // { leng }: { leng: number }
+  // console.log("leng", leng);
   return (
     <section id="section-2" className="flex-col">
       <Image
@@ -19,7 +27,9 @@ export default function Section2({ scale }: { scale: number }) {
         <h2>REWARDS</h2>
         <SlidingCards />
       </div>
-      <div className="how-it-works">How it works</div>
+      <div className="how-it-works" style={{ transform: `scale(${leng}, 1` }}>
+        <p style={{ transform: `scale(${1 / leng},1 ` }}>How it works</p>
+      </div>
     </section>
   );
 }

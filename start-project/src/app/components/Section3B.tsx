@@ -1,3 +1,7 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Image from "next/image";
 import step01 from "../../../public/step01.svg";
 import step02 from "../../../public/step02.svg";
@@ -61,8 +65,35 @@ export const Objects = {
 };
 
 export default function Section3() {
+  gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null);
+  useEffect(() => {
+    const element: any = ref.current;
+    // console.log("element", element);
+    // console.log(element.querySelector(".step-slide-1"));
+
+    // gsap.fromTo(
+    //   element?.querySelector(".step-slide-1"),
+    //   {
+    //     opacity: 1,
+    //     // y: 0,
+    //   },
+    //   {
+    //     opacity: 0,
+    //     // y: -500,
+    //     scrollTrigger: {
+    //       trigger: element.querySelector("#section-3"),
+    //       start: "30% bottom",
+    //       end: "30% top",
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   }
+    // );
+  }, []);
+
   return (
-    <section id="section-3">
+    <section id="section-3" className="section-3">
       {Objects.cardOptions && Objects.cardOptions.length > 0
         ? Objects.cardOptions.map((post) => (
             <div key={post.Id} className={`step-slides ${post.className} `}>

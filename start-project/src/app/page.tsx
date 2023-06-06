@@ -9,40 +9,76 @@ import { useEffect, useState } from "react";
 // import mouseScroll from '../../public/Mouse-icon.svg'
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
+import Section3 from "./components/Section3B";
 import SectionFAQ from "./components/SectionFAQ";
-let i = 1;
-let scrllY: any = 0;
-let setLast: any = 0;
 
+//========var==========
+let i = 1;
+let j = 1;
+let scrllY: any = 0;
+let scrll2Y: any = 0;
+let setLast: any = 0;
+//======================
 export default function Home() {
   const [scale, setScale] = useState(1);
+  const [leng, setLeng] = useState(1);
   const [firstPos, setFirstPos] = useState(1);
-
+  //====================scale i useeffet======================
   useEffect(() => {
     const element = document.querySelector("#section-1");
     let rect: any = element?.getBoundingClientRect();
     setFirstPos(rect.y);
+    // console.log(rect.y, "y");
   }, []);
-
+  //=========================================================
+  window.addEventListener("scroll", scrollEffect);
+  //======================scroll trigger functuion=============================
   function scrollEffect() {
+    //======================scroll trigger rect=============================
     const element = document.querySelector("#section-1");
-
     let rect: any = element?.getBoundingClientRect();
+    // console.log(rect.y, "rect-y");
     if (rect?.y < scrllY && i <= 1.3) {
       i += 0.01;
       setScale(i);
       setLast = rect?.y;
-    } else if (i >= 1 && rect?.y > setLast) {
+    } else if (i >= 1 && rect?.y > setLast && rect?.y > scrllY) {
       i -= 0.01;
       setScale(i);
+      // console.log(i, "in if else");
     }
     if (rect?.y >= firstPos && i != 1) {
       setScale(1);
       i = 1;
     }
-    scrllY = rect?.y;
+    // console.log(i, "out if");
 
+    scrllY = rect?.y;
+    //======================scroll trigger howto=============================
+
+    const howTo: any = document.querySelector(".how-it-works");
+    const winSize: any = window.innerHeight;
+    if (
+      howTo?.getBoundingClientRect().bottom <= winSize &&
+      scrll2Y > howTo?.getBoundingClientRect().top
+    ) {
+      // console.log("same");
+
+      {
+        if (j <= 2) {
+          j += 0.01;
+          setLeng(j);
+        }
+      }
+    }
+    if (scrll2Y < howTo?.getBoundingClientRect().top) {
+      if (j > 1) {
+        j -= 0.01;
+        setLeng(j);
+      }
+    }
+    scrll2Y = howTo?.getBoundingClientRect().top;
+    //======================scroll trigger step-slides=============================
     const elements = document.querySelectorAll(".step-slides");
 
     for (let i = 0; i < elements.length; i++) {
@@ -59,9 +95,11 @@ export default function Home() {
     ) {
       elements[0]?.classList.remove("opacity1");
     } else {
-      elements[0]?.classList.add("opacity1");
+      // elements[0]?.classList.add("opacity1");
     }
   }
+  //==================function end =========================
+  // console.log(leng);
 
   return (
     <div
@@ -71,7 +109,7 @@ export default function Home() {
       }}
     >
       <Section1 />
-      <Section2 scale={scale} />
+      <Section2 scale={scale} leng={leng} />
       <Section3 />
       <SectionFAQ />
     </div>
