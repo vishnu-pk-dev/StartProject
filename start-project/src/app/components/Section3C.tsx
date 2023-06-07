@@ -1,6 +1,10 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper";
+
+// import "swiper/swiper.min.css";
+// import "swiper/swiper-element.min.css";
+// import "swiper/swiper-element-bundle.min.css";
 
 import Image from "next/image";
 import step01 from "../../../public/step01.svg";
@@ -13,6 +17,7 @@ import number02 from "../../../public/number2.svg";
 import number03 from "../../../public/number3.svg";
 import number04 from "../../../public/number4.svg";
 import number05 from "../../../public/number5.svg";
+import { useRef } from "react";
 
 export const Objects = {
   cardOptions: [
@@ -65,62 +70,52 @@ export const Objects = {
 };
 
 export default function Section3() {
-  gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
-  useEffect(() => {
-    const element: any = ref.current;
-    // console.log("element", element);
-    console.log(window.innerHeight);
-
-    gsap.utils;
-    // .toArray(element.querySelector(".step-slides"))
-    // .forEach((stepSlides, index) => {
-    //   ScrollTrigger.create({
-    //     trigger: stepSlides,
-    //     start: "top top",
-    //     scrub: true,
-    //     pin: true,
-    //     pinSpacing: false,
-    //   });
-    // });
-
-    ScrollTrigger.create({
-      trigger: ".how-it-works",
-      snap: {
-        snapTo: 1 / 5,
-        duration: 0.5,
-      },
-      start: "bottom bottom",
-      end: `start+=${window.innerHeight * 4.25}px`,
-    });
-  }, []);
 
   return (
-    <section id="section-3" className="section-3" ref={ref}>
-      {Objects.cardOptions && Objects.cardOptions.length > 0
-        ? Objects.cardOptions.map((post) => (
-            <div key={post.Id} className={`step-slides ${post.className} `}>
-              <div className="container flex ">
-                <div className="steps-left flex">
-                  <Image
-                    className="bg-step-count"
-                    src={post.countImg}
-                    alt="number"
-                  />
-                  <button className="btn-div">{post.step}</button>
-                  <div className="step-text">
-                    <h3 className="step-heading">{post.title}</h3>
-                    <p className="step-des">{post.desc}</p>
+    <section id="section-3" className="section-3">
+      <Swiper
+        direction={"vertical"}
+        slidesPerView={1}
+        spaceBetween={30}
+        mousewheel={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Pagination]}
+        className="mySwiper"
+      >
+        {Objects.cardOptions && Objects.cardOptions.length > 0
+          ? Objects.cardOptions.map((post) => (
+              <SwiperSlide key={post.Id}>
+                <div key={post.Id} className={`step-slides ${post.className} `}>
+                  <div className="container flex ">
+                    <div className="steps-left flex">
+                      <Image
+                        className="bg-step-count"
+                        src={post.countImg}
+                        alt="number"
+                      />
+                      <button className="btn-div">{post.step}</button>
+                      <div className="step-text">
+                        <h3 className="step-heading">{post.title}</h3>
+                        <p className="step-des">{post.desc}</p>
+                      </div>
+                    </div>
+                    <div className="steps-right">
+                      <Image
+                        className="bg-step-img"
+                        src={post.bgImg}
+                        alt="step"
+                      />
+                    </div>
                   </div>
+                  {/* <div className="side-carousel-pos"></div> */}
                 </div>
-                <div className="steps-right">
-                  <Image className="bg-step-img" src={post.bgImg} alt="step" />
-                </div>
-              </div>
-              {/* <div className="side-carousel-pos"></div> */}
-            </div>
-          ))
-        : null}
+              </SwiperSlide>
+            ))
+          : null}
+      </Swiper>
     </section>
   );
 }

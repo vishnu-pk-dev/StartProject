@@ -9,7 +9,7 @@ export default function SlidingCards() {
   const ref = useRef(null);
   useEffect(() => {
     const element: any = ref.current;
-    console.log("element", element);
+    // console.log("element", element);
     gsap.fromTo(
       element.querySelector(".card-left"),
       {
@@ -18,9 +18,9 @@ export default function SlidingCards() {
       {
         x: -500,
         scrollTrigger: {
-          trigger: element.querySelector(".sliding-cards"),
-          start: "15% bottom",
-          end: "50% top",
+          trigger: ".sliding-cards",
+          start: "top bottom",
+          end: "bottom top",
           scrub: true,
           // markers: true,
         },
@@ -39,9 +39,9 @@ export default function SlidingCards() {
       {
         x: -500,
         scrollTrigger: {
-          trigger: element.querySelector(".sliding-cards"),
-          start: "15% bottom",
-          end: "50% top",
+          trigger: ".sliding-cards",
+          start: "top bottom",
+          end: "bottom top",
           scrub: true,
           // markers: true,
         },
