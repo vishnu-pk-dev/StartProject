@@ -2,7 +2,7 @@
 @import "../../node_modules/swiper/swiper-vars.scss";
 $primary: #5a1cb1;
 $set-width: 81.25%;
-$set-scale: 1;
+// $set-scale: 1;
 
 ::-webkit-input-placeholder {
   /* Edge */
@@ -79,12 +79,6 @@ button {
   width: 100%;
   height: 100%;
 }
-.opacity0 {
-  opacity: 0 !important;
-}
-.opacity1 {
-  opacity: 1 !important;
-}
 
 @keyframes animatesteps {
   from {
@@ -106,7 +100,7 @@ button {
 #section-1 {
   position: relative;
 
-  // background-image: url("../../public/Webby.svg");
+  background-image: url("../../public/Webby.svg");
   // background-attachment: fixed;
   width: 100%;
   min-height: 100%;
@@ -171,7 +165,7 @@ button {
       height: 100%;
       left: 0px;
       top: 0px;
-      background-image: url("../../public/Webby.svg");
+      // background-image: url("../../public/Webby.svg");
       // background-color: linear-gradient(
       //   90deg,
       //   rgba(90, 28, 177, 0.8) 0%,
@@ -372,7 +366,7 @@ button {
     position: absolute;
     top: -255px;
     right: -18.5%;
-    scale: $set-scale;
+    // scale: $set-scale;
     z-index: -1;
     pointer-events: none;
     transition: scale 0.1s;
@@ -543,35 +537,37 @@ button {
   }
 }
 #section-3 {
+  position: relative;
   // scale: 0;
   // min-height: 500vh;
-  // height: 100vh;
-  // overflow: scroll;
+  height: 100vh;
+  background-color: #fff;
+
+  overflow: scroll;
   // z-index: 2;
   // scroll-snap-type: y mandatory;
   // position: sticky;
   // top: 0;
   background-color: #fff;
   // display: flex;
-  position: relative;
-  align-items: center;
+  // align-items: center;
   .step-slides {
     // scroll-snap-align: start;
     // scroll-snap-stop: always;
 
     width: 100%;
     height: 100vh;
-    position: relative;
+    // position: sticky;
     top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
+    // left: 0%;
+    // right: 0%;
+    // bottom: 0%;
     // scale: 0.2;
     transform: translate(-50% -50%);
     // top: 0;
     overflow: hidden;
     // opacity: 0;
-    // background-color: #fff;
+    background-color: #fff;
     transition: all 0.2s;
     .container {
       height: inherit;

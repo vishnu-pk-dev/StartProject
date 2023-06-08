@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import vector16 from "../../../public/Vector-16.svg";
 import SlidingCards from "./SlidingCards2";
 export default function Section2(
@@ -22,9 +22,12 @@ export default function Section2(
   };
 
   gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null);
   useEffect(() => {
+    const element: any = ref.current;
     gsap.fromTo(
-      ".vector162",
+      element.querySelector(".vector162"),
+
       {
         scale: 1,
       },
@@ -32,7 +35,7 @@ export default function Section2(
         scale: 1.3,
         scrollTrigger: {
           trigger: "#section-2",
-          start: "-12% bottom",
+          start: "clamp(-15% bottom)",
           end: "top 75%",
           scrub: true,
           // markers: true,
@@ -41,25 +44,28 @@ export default function Section2(
     );
   }, []);
   useEffect(() => {
+    const element: any = ref.current;
     gsap.fromTo(
-      ".sec-2-prax",
+      element.querySelector(".sec-2-parx"),
       {
-        scale: 1,
+        // y: 0,
+        scale: 0.75,
       },
       {
-        scale: 1.3,
+        // y: 100,
+        scale: 1.25,
         scrollTrigger: {
-          trigger: "#section-2",
+          trigger: ".sec-2-parx",
           start: "top bottom",
-          end: "top 75%",
-          scrub: true,
+          end: "bottom top",
+          scrub: 1,
           // markers: true,
         },
       }
     );
   }, []);
   return (
-    <section id="section-2" className="flex-col">
+    <section id="section-2" className="flex-col" ref={ref}>
       <Image
         className="vector162"
         src={vector16}
@@ -71,7 +77,7 @@ export default function Section2(
         <div className="btn-div">Our goal is simple:</div>
         <h4>To provide you best</h4>
         <h3>Offers and Rewards</h3>
-        <h2 className=" sec-2-parx">REWARDS</h2>
+        <h2 className="sec-2-parx">REWARDS</h2>
         <SlidingCards />
       </div>
       <div

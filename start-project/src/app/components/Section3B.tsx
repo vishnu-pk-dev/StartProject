@@ -67,39 +67,28 @@ export const Objects = {
 export default function Section3() {
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
-  useEffect(() => {
-    const element: any = ref.current;
-    // console.log("element", element);
-    console.log(window.innerHeight);
-
-    gsap.utils;
-    // .toArray(element.querySelector(".step-slides"))
-    // .forEach((stepSlides, index) => {
-    //   ScrollTrigger.create({
-    //     trigger: stepSlides,
-    //     start: "top top",
-    //     scrub: true,
-    //     pin: true,
-    //     pinSpacing: false,
-    //   });
-    // });
-
-    ScrollTrigger.create({
-      trigger: ".how-it-works",
-      snap: {
-        snapTo: 1 / 5,
-        duration: 0.5,
-      },
-      start: "bottom bottom",
-      end: `start+=${window.innerHeight * 4.25}px`,
-    });
-  }, []);
-
+  // useEffect(() => {
+  //// gsap.set("#section-3", { height: "100vh" });
+  //   gsap.to("#section-3", {
+  //     scrollTrigger: {
+  //       trigger: "#section-3",
+  //       markers: true,
+  //       start: "top top",
+  //       end: () => "+=" + window.innerWidth,
+  //       scrub: 2,
+  //       snap: 1 / 5,
+  //     },
+  //   });
+  // }, []);
   return (
     <section id="section-3" className="section-3" ref={ref}>
       {Objects.cardOptions && Objects.cardOptions.length > 0
         ? Objects.cardOptions.map((post) => (
-            <div key={post.Id} className={`step-slides ${post.className} `}>
+            <div
+              key={post.Id}
+              className={`step-slides ${post.className} `}
+              style={{ zIndex: Objects.cardOptions.length - post.Id }}
+            >
               <div className="container flex ">
                 <div className="steps-left flex">
                   <Image
