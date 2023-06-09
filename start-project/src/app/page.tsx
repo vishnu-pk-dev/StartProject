@@ -8,9 +8,8 @@ import { useEffect, useState } from "react";
 // import women1 from '../../public/joyful-afro-woman.png'
 // import mouseScroll from '../../public/Mouse-icon.svg'
 import Section1 from "./components/Section1";
-import Section1Nav from "./components/Section1Nav";
 import Section2 from "./components/Section2";
-import Section3 from "./components/Section3B";
+import Section3 from "./components/Section3D";
 import SectionFAQ from "./components/SectionFAQ";
 
 //========var==========
@@ -134,6 +133,7 @@ export default function Home() {
       //   scrollEffect();
       //}}
     >
+      {/* <div className="test1"></div> */}
       <Section1 />
       <Section2 />
       {/* <Section2 scale={scale} leng={leng} /> */}

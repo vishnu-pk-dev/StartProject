@@ -6,19 +6,18 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import vector16 from "../../../public/Vector-16.svg";
 import SlidingCards from "./SlidingCards2";
-export default function Section2(
-  {
-    //   scale,
-    //   leng,
-    // }: {
-    //   scale: number;
-    //   leng: number;
-    //
-  }
-) {
+export default function Section2() {
+  //  {
+  //   scale,
+  //   leng,
+  // }: {
+  //   scale: number;
+  //   leng: number;
+  //
+  //  }
   const scrollTo = () => {
     const section3 = document.getElementById("section-3");
-    section3?.scrollIntoView();
+    section3?.scrollIntoView({ behavior: "smooth" });
   };
 
   gsap.registerPlugin(ScrollTrigger);
@@ -50,10 +49,12 @@ export default function Section2(
       {
         // y: 0,
         scale: 0.75,
+        opacity: 1,
       },
       {
         // y: 100,
         scale: 1.25,
+        opacity: 0.5,
         scrollTrigger: {
           trigger: ".sec-2-parx",
           start: "top bottom",
@@ -63,6 +64,18 @@ export default function Section2(
         },
       }
     );
+  }, []);
+  useEffect(() => {
+    gsap.to(".how-it-works", {
+      scrollTrigger: {
+        trigger: ".how-it-works",
+        start: "bottom bottom",
+        endTrigger: "#section-3",
+        end: "bottom bottom",
+        scrub: true,
+      },
+      width: "100%",
+    });
   }, []);
   return (
     <section id="section-2" className="flex-col" ref={ref}>

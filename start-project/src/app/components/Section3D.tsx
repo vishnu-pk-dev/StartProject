@@ -69,23 +69,34 @@ export default function Section3() {
   const ref = useRef(null);
   useEffect(() => {
     // gsap.set("#section-3", { height: "100vh" });
-    gsap.to(".step-slides", {
+    gsap.from(".step-slides", {
       stagger: 0.5,
-      yPercent: 100,
-      scale: 0.5,
-      // opacity: 0.5,
+      xPercent: 100,
       ease: "none",
       scrollTrigger: {
         trigger: "#section-3",
         start: "top top",
         // end: "bottom top",
-        end: () => "+=" + window.innerWidth,
+        end: () => "+=" + window.innerWidth * 2,
         pin: "#section-3",
         // pinSpacing: false,
         scrub: true,
         snap: 1 / 5,
         // markers: true,
       },
+    });
+  }, []);
+  useEffect(() => {
+    gsap.from("#section-3", {
+      scrollTrigger: {
+        trigger: "#section-3",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+      },
+      // scale: 0,
+      // borderRadius: 500,
+      transform: "scale(0.92,1)",
     });
   }, []);
   return (
@@ -95,7 +106,7 @@ export default function Section3() {
             <div
               key={post.Id}
               className={`step-slides ${post.className} `}
-              style={{ zIndex: Objects.cardOptions.length - post.Id }}
+              style={{ zIndex: post.Id }}
             >
               <div className="container flex ">
                 <div className="steps-left flex">

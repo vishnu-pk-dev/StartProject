@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Section1Container from "./Section1Container";
+import Section1Nav from "./Section1Nav";
 export default function Section1() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +46,19 @@ export default function Section1() {
       }
     );
   }, []);
+  useEffect(() => {
+    const element: any = ref.current;
+    const navClass = element.querySelector(".nav-holder");
+    ScrollTrigger.create({
+      trigger: ".nav-holder",
+      start: "100% top",
+      endTrigger: ".home",
+      end: "bottom -1000%",
+      toggleClass: "bg-clr",
+      // markers: true,
+    });
+  }, []);
+
   // useEffect(() => {
   //   const element: any = ref.current;
   //   gsap.fromTo(
@@ -83,6 +97,10 @@ export default function Section1() {
 
   return (
     <section id="section-1" className="header-section" ref={ref}>
+      <div className="nav-holder  fixed-top">
+        <Section1Nav />
+      </div>
+
       <div className="bg-elements">
         <h1 className="bg-elements-text parx " data-speed="0.3">
           START

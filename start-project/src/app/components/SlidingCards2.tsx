@@ -21,7 +21,7 @@ export default function SlidingCards() {
           trigger: ".sliding-cards",
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.5,
           // markers: true,
         },
       }
@@ -42,7 +42,7 @@ export default function SlidingCards() {
           trigger: ".sliding-cards",
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.5,
           // markers: true,
         },
       }
