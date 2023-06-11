@@ -48,7 +48,7 @@ export default function Section1() {
   }, []);
   useEffect(() => {
     const element: any = ref.current;
-    const navClass = element.querySelector(".nav-holder");
+    // const navClass = element.querySelector(".nav-holder");
     ScrollTrigger.create({
       trigger: ".nav-holder",
       start: "100% top",
@@ -58,7 +58,7 @@ export default function Section1() {
       // markers: true,
     });
   }, []);
-
+  //==================non css bg lock=========================
   // useEffect(() => {
   //   const element: any = ref.current;
   //   gsap.fromTo(
