@@ -75,6 +75,8 @@ export default function Section2() {
         scrub: true,
       },
       width: "100%",
+      height: "+=300px",
+      opacity: 1,
     });
   }, []);
   return (

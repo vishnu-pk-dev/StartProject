@@ -3,6 +3,7 @@ import arrowColor from "../../../public/arrow-color.svg";
 import iPhone from "../../../public/4k-iphone.png";
 import ANDimg from "../../../public/AND-img.png";
 import IOSimg from "../../../public/IOS-img.png";
+import { useState } from "react";
 
 export const Objects = {
   cardOptions: [
@@ -35,6 +36,15 @@ export const Objects = {
 };
 
 export default function FAQ() {
+  const [toggleBtn, setToggleBtn] = useState(true);
+
+  const [selected, setSelected] = useState(0);
+
+  const toggleDown = (toggleId: number) => {
+    setToggleBtn(!toggleBtn);
+    setSelected(toggleId);
+  };
+
   return (
     <section id="FAQ-in">
       <div className="container">
@@ -55,10 +65,27 @@ export default function FAQ() {
           {Objects.cardOptions && Objects.cardOptions.length > 0
             ? Objects.cardOptions.map((post) => (
                 <div key={post.Id} className="accordion">
-                  <div className="accordion-btn">
+                  <div
+                    className="accordion-btn"
+                    onClick={() => toggleDown(post.Id)}
+                  >
                     <p>{post.Qusetion}</p>
+                    <div
+                      className={
+                        !toggleBtn && selected == post.Id
+                          ? "toggle-btn-ico toggele-selected "
+                          : "toggle-btn-ico "
+                      }
+                    >
+                      {" "}
+                      {!toggleBtn && selected == post.Id ? "-" : "+"}
+                    </div>
                   </div>
-                  <div className="panel">{post.Answer}</div>
+                  {!toggleBtn && selected == post.Id ? (
+                    <div className="panel">{post.Answer}</div>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               ))
             : null}

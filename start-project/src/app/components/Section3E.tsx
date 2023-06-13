@@ -70,9 +70,10 @@ export default function Section3() {
   //===================STEP SLIDES====================
   useEffect(() => {
     // gsap.set("#section-3", { height: "100vh" });
-    gsap.from(".step-slides", {
+    gsap.from(".steps-left", {
       stagger: 0.5,
-      yPercent: 100,
+      yPercent: 150,
+      opacity: 0,
       ease: "none",
       scrollTrigger: {
         trigger: "#section-3",
@@ -86,7 +87,44 @@ export default function Section3() {
         // markers: true,
       },
     });
+
+    gsap.from(".steps-right", {
+      stagger: 0.5,
+      yPercent: -150,
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#section-3",
+        start: "top top",
+        // end: "bottom top",
+        end: () => "+=" + window.innerWidth * 2,
+        // pin: "#section-3",
+        // pinSpacing: false,
+        scrub: true,
+        snap: 1 / 5,
+        // markers: true,
+      },
+    });
+
+    gsap.from(".step-slides", {
+      stagger: 0.5,
+      background: "#ffffff00",
+      //   opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#section-3",
+        start: "100% top",
+        // end: "bottom top",
+        end: () => "+=" + window.innerWidth * 2,
+        // pin: "#section-3",
+        // pinSpacing: false,
+        scrub: true,
+        snap: 1 / 5,
+        // markers: true,
+      },
+    });
   }, []);
+
   //=========================PAGINATION=================
   useEffect(() => {
     let targets = gsap.utils.toArray(".pagination-container");
@@ -101,7 +139,7 @@ export default function Section3() {
         endTrigger: "#FAQ",
         end: "top bottom",
         // toggleClass: "active-page",
-        id: "colorOn",
+        // id: "colorOn",
         markers: true,
         scrub: true,
       },

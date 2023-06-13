@@ -13,9 +13,9 @@ export default function Section1Nav() {
         <Image className="logo" src={logo} alt="logo" />
       </div>
       <div className="nav-links">
-        <a href="">Rewards</a>
-        <a href="">Contact us</a>
-        <a href="">FAQs</a>
+        <a href="#section-2">Rewards</a>
+        <a href="#footer">Contact us</a>
+        <a href="#FAQ">FAQs</a>
       </div>
       <button>Sign in</button>
     </nav>

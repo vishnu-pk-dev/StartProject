@@ -319,6 +319,7 @@ button {
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 #section-1 {
@@ -484,13 +485,13 @@ button {
   opacity: 0.6;
 }
 #section-1 .bg-elements-grad {
-  z-index: -1;
+  z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
-  background-color: linear-gradient(90deg, rgba(90, 28, 177, 0.8) 0%, rgba(90, 28, 177, 0) 50%);
+  background: linear-gradient(90deg, rgba(90, 28, 177, 0.8) 0%, rgba(90, 28, 177, 0) 50%);
 }
 #section-1 .container {
   position: relative;
@@ -501,7 +502,7 @@ button {
 }
 #section-1 .container .main {
   display: flex;
-  padding-top: 12.3%;
+  padding-top: 10%;
 }
 #section-1 .container .main-content {
   padding-top: 7.5%;
@@ -585,7 +586,7 @@ button {
 }
 #section-1 .container .main-img-right .img-right {
   position: absolute;
-  top: 7.6%;
+  top: 4.3%;
   right: -46%;
   z-index: -1;
 }
@@ -678,7 +679,6 @@ button {
   color: rgba(255, 255, 255, 0.1);
 }
 #section-2 .rewards-container .sliding-cards {
-  z-index: 10;
   position: absolute;
   transform: rotate(2deg);
   top: 111.5%;
@@ -759,11 +759,12 @@ button {
   }
 }
 #section-2 .how-it-works {
+  z-index: 10;
   margin: auto;
   margin-top: auto;
   margin-bottom: 0;
   bottom: 0;
-  width: 92%;
+  width: 80%;
   background-color: #fff;
   font-size: 54px;
   font-weight: 600;
@@ -780,14 +781,12 @@ button {
   height: 100vh;
   background-color: #fff;
   overflow: hidden;
-  background-color: #fff;
 }
 #section-3 .step-slides {
   width: 100%;
   height: 100vh;
   position: absolute;
   top: 0%;
-  transform: translate(-50% -50%);
   overflow: hidden;
   background-color: #fff;
   transition: all 0.2s;
@@ -841,6 +840,7 @@ button {
   color: #2e2525;
 }
 #section-3 .step-slides .container .steps-right {
+  z-index: 1;
   width: 50%;
   position: relative;
   height: inherit;
@@ -849,6 +849,31 @@ button {
   position: absolute;
   top: -35%;
   left: -55%;
+}
+#section-3 .pagination {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(0, -50%);
+  z-index: 6;
+}
+#section-3 .pagination-container {
+  margin-block: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: 0;
+  background: #d5d3d3;
+}
+#section-3 .pagination-container .pagination-mark {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+#section-3 .pagination .active-page {
+  border: solid 1px #2e2525;
+  background: #fff;
 }
 
 #FAQ {
@@ -892,10 +917,11 @@ button {
 }
 #FAQ #FAQ-in .container .faq-accordion .accordion {
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid rgba(41, 51, 61, 0.4156862745);
   border-radius: 15px;
   margin-bottom: 20px;
   padding: 20px;
+  transition: all 0.5s;
 }
 #FAQ #FAQ-in .container .faq-accordion .accordion:hover {
   cursor: pointer;
@@ -912,8 +938,7 @@ button {
 #FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn P {
   margin-right: 20%;
 }
-#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn::after {
-  content: "+";
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn .toggle-btn-ico {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -922,12 +947,21 @@ button {
   border-radius: 5px;
   height: 1em;
 }
-#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn:hover > .accordion-btn::after {
-  background-color: #000;
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn:hover > .toggle-btn-ico {
+  border: none;
+  background: #d5d3d3;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn:hover > .toggele-selected {
+  border: none;
+  background: #d5d3d3;
+  color: #000;
+}
+#FAQ #FAQ-in .container .faq-accordion .accordion .accordion-btn .toggele-selected {
+  border: none;
+  background: #000;
   color: #fff;
 }
 #FAQ #FAQ-in .container .faq-accordion .accordion .panel {
-  max-height: 0;
   color: #3b4d5d;
   font-size: 16px;
   font-weight: 400px;
